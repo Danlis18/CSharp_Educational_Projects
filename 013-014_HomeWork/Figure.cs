@@ -2,7 +2,9 @@
 {
     abstract class Figure
     {
-        abstract public double Area();
-        abstract public double Perimeter();
+
+        public abstract double Area();
+        public abstract double Perimeter();
+
     }
 }
