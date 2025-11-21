@@ -30,5 +30,10 @@ namespace _007_ClassPractice
             bool isInside = (Math.Pow(pointCheck.GetX() - sirclePoint.GetX(), 2) + Math.Pow(pointCheck.GetY() - sirclePoint.GetY(), 2)) <= Math.Pow(this.radius, 2);
             return isInside;
         }
+
+        public override string ToString()
+        {
+            return $"Circle: \n Center Point -> X: {sirclePoint.GetX()}, Y: {sirclePoint.GetY()} \n Radius -> {radius} \n Area -> {GetArea(radius)} \n Circumference -> {GetFerence(radius)}";
+        }
     }
 }
