@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_Basics", "001_Basics\001_Basics.csproj", "{07D06E19-DB6E-423A-860E-3F78D2ED3854}"
 EndProject
@@ -36,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "013-014_HomeWork", "013-014_HomeWork\013-014_HomeWork.csproj", "{CDE1340A-B58E-40C4-9F6A-51A84E5C0719}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_ClassVector", "Lab_ClassVector\Lab_ClassVector.csproj", "{325DECCC-B437-40C9-8CF8-1D8B6EB85EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "009-010_HomeWork", "009-010_HomeWork\009-010_HomeWork.csproj", "{2F8F2515-A14F-437A-8E8C-9DB8AFA5C476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{325DECCC-B437-40C9-8CF8-1D8B6EB85EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325DECCC-B437-40C9-8CF8-1D8B6EB85EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325DECCC-B437-40C9-8CF8-1D8B6EB85EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8F2515-A14F-437A-8E8C-9DB8AFA5C476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8F2515-A14F-437A-8E8C-9DB8AFA5C476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8F2515-A14F-437A-8E8C-9DB8AFA5C476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8F2515-A14F-437A-8E8C-9DB8AFA5C476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
