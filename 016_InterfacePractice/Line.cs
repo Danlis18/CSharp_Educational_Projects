@@ -19,24 +19,28 @@
             Console.ResetColor();
         }
 
-        public void Up(Point distance)
+        public override void Up(Point distance)
         {
-            throw new NotImplementedException();
+            start = new Point(start.X, start.Y - distance.Y);
+            end = new Point(end.X, end.Y - distance.Y);
         }
 
-        public void Down(Point distance)
+        public override void Down(Point distance)
         {
-            throw new NotImplementedException();
+            start = new Point(start.X, start.Y + distance.Y);
+            end = new Point(end.X, end.Y + distance.Y);
         }
 
-        public void Left(Point distance)
+        public override void Left(Point distance)
         {
-            throw new NotImplementedException();
+            start = new Point(start.X - distance.X, start.Y);
+            end = new Point(end.X - distance.X, end.Y);
         }
 
-        public void Right(Point distance)
+        public override void Right(Point distance)
         {
-            throw new NotImplementedException();
+            start = new Point(start.X + distance.X, start.Y);
+            end = new Point(end.X + distance.X, end.Y);
         }
     }
 }

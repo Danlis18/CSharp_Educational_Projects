@@ -1,6 +1,6 @@
 ﻿namespace _016_InterfacePractice
 {
-    internal class Circle : FigurAbstract, IMove
+    class Circle : FigurAbstract, IMove
     {
         Point center;
         double radius;
@@ -19,24 +19,36 @@
             Console.ResetColor();
         }
 
-        public void Down(Point distance)
+        public override void Down(Point distance)
         {
-            Console.WriteLine($"Circle moved down by {distance} units");
+            for (int i = 0; i < 1; i++)
+            {
+                center = new Point(center.X, center.Y + distance.Y);
+            }
         }
 
-        public void Left(Point distance)
+        public override void Left(Point distance)
         {
-            Console.WriteLine($"Circle moved left by {distance} units");
+            for (int i = 0; i < 1; i++)
+            {
+                center = new Point(center.X - distance.X, center.Y);
+            }
         }
 
-        public void Right(Point distance)
+        public override void Right(Point distance)
         {
-            Console.WriteLine($"Circle moved right by {distance} units");
+            for (int i = 0; i < 1; i++)
+            {
+                center = new Point(center.X + distance.X, center.Y);
+            }
         }
 
-        public void Up(Point distance)
+        public override void Up(Point distance)
         {
-            Console.WriteLine($"Circle moved up by {distance} units");
+            for (int i = 0; i < 1; i++)
+            {
+                center = new Point(center.X, center.Y - distance.Y);
+            }
         }
     }
 }

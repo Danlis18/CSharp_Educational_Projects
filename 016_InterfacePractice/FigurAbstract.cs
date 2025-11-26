@@ -14,5 +14,10 @@ namespace _016_InterfacePractice
         }
 
         public abstract void Drow();
+
+        public abstract void Up(Point distance);
+        public abstract void Down(Point distance);
+        public abstract void Left(Point distance);
+        public abstract void Right(Point distance);
     }
 }

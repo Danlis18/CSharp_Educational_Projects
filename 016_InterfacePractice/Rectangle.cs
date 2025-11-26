@@ -10,31 +10,41 @@
             this.points = points;
         }
 
-        public void Down(Point distance)
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Drow()
         {
             Console.ForegroundColor = color;
             Console.WriteLine($"Rectangle: P1 = {points[0]}, P2 = {points[1]}, P3 = {points[2]}, P4 = {points[3]}");
             Console.ResetColor();
         }
-
-        public void Left(Point distance)
+        public override void Down(Point distance)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = new Point(points[i].X, points[i].Y - distance.Y);
+            }
+        }
+        public override void Left(Point distance)
+        {
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = new Point(points[i].X - distance.X, points[i].Y);
+            }
         }
 
-        public void Right(Point distance)
+        public override void Right(Point distance)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = new Point(points[i].X + distance.X, points[i].Y);
+            }
         }
 
-        public void Up(Point distance)
+        public override void Up(Point distance)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = new Point(points[i].X, points[i].Y + distance.Y);
+            }
         }
     }
 }
