@@ -2,26 +2,28 @@
 
 
 Bank clients = new Bank();
-
-Console.WriteLine(new string('+', 10) + " список клієнтів " + new string('+', 10) + "\n");
-for (int i = 0; i < clients.Length; i++)
-{
-    Console.WriteLine(clients[i]);
+void print(Bank clients) {
+   Console.WriteLine();
+   Console.WriteLine(new string('+', 10) + " список клiєнтiв " + new string('+', 10));
+    for (int i = 0; i < clients.Length; i++)
+    {
+        Console.WriteLine(clients[i]);
+    }
 }
 
-//clients.Sort(new AccountBalanceComparer());
+print(clients);
+
 clients.Sort(); //Сортування за замовчуванням (за прізвищем)
 
-Console.WriteLine();
-Console.Write(new string('+', 10) + " Посортований список клієнтів " + new string('+', 10) + "\n");
+print(clients);
 
-for (int i = 0; i < clients.Length; i++)
-{
-    Console.WriteLine(clients[i]);
-}
+clients.Sort(new AccountBalanceComparer()); //Сортування за балансом
 
+print(clients);
 
+clients.Sort(new AccountRegistrationCompare()); //Сортування за датою реєстрації
 
+print(clients);
 
 
 
@@ -30,6 +32,7 @@ Account account = new Account
 {
     FirstName = "John",
     LastName = "Miller",
+    AccountNumber = "QWERTY",
     Balance = 0.00m,
     OpenedDate = DateTime.Now
 };
@@ -38,5 +41,6 @@ Account account2 = (Account)account.Clone();
 account2.FirstName = "Mike";
 account2.Balance = 100.00m;
 
+Console.WriteLine();
 Console.WriteLine(account);
 Console.WriteLine(account2);

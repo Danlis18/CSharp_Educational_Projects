@@ -45,14 +45,14 @@ namespace _018_PracticeStandartInterface
             get { return accounts[index]; }
         }
 
+        public void Sort()
+        {
+            Array.Sort(accounts);
+        }
+
         public void Sort(IComparer comparer)
         {
             Array.Sort(accounts, comparer);
-        }
-
-        internal void Sort()
-        {
-            throw new NotImplementedException();
         }
     }
 }

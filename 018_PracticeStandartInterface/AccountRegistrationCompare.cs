@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 namespace _018_PracticeStandartInterface
 {
-    class AccountBalanceComparer : IComparer
+    class AccountRegistrationCompare : IComparer
     {
         public int Compare(object? x, object? y)
         {
             if (x is Account && y is Account)
             {
-                return (x as Account).Balance.CompareTo((y as Account).Balance);
+                return (x as Account).OpenedDate.CompareTo((y as Account).OpenedDate);
             }
             throw new Exception("Object is not an Account");
         }

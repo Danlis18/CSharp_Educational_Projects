@@ -3,12 +3,6 @@ namespace _018_PracticeStandartInterface
 {
     class Account : IComparable, ICloneable
     {
-        private string accountNumber;
-        private string firstName;
-        private string lastName;
-        private decimal balance;
-        private DateTime openedDate;
-
         public string AccountNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -32,6 +26,7 @@ namespace _018_PracticeStandartInterface
             }
             throw new NotImplementedException();
         }
+
 
         public override string ToString()
         {
