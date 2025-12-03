@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 
-namespace _017_StandartInterface
+namespace _017_StandartInterface 
 {
-    class Auditory
+    class Auditory : IEnumerable
     {
         Student[] students =
         {
@@ -64,6 +64,11 @@ namespace _017_StandartInterface
         public void Sort(IComparer comparer)
         {
             Array.Sort(students, comparer);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return students.GetEnumerator();
         }
     }
 }

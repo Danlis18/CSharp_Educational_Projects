@@ -32,7 +32,7 @@ studentCard2.Number = 654321;
 Console.WriteLine(studentCard);*/
 
 // Демонстрація роботи інтерфейсу ICloneable з класом Student
-Student student = new Student
+/*Student student = new Student
 {
     FirstName = "John",
     LastName = "Miller",
@@ -47,4 +47,13 @@ Student student = new Student
 Student student2 = (Student)student.Clone();
 student2.FirstName = "Mike";
 student2.StudentCard.Number = 999999;
-Console.WriteLine(student);
+Console.WriteLine(student);*/
+
+//Вивід за допомогою foreach
+
+Auditory auditory = new Auditory();
+
+foreach (Student student in auditory)
+{
+    Console.WriteLine(student);
+}
