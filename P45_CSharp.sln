@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_Basics", "001_Basics\001_Basics.csproj", "{07D06E19-DB6E-423A-860E-3F78D2ED3854}"
 EndProject
@@ -54,6 +54,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "021_VectorGeneric", "021_VectorGeneric\021_VectorGeneric.csproj", "{FCD7821D-BAD3-438D-9B77-3BACDB3A0D3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "022_Collections", "022_Collections\022_Collections.csproj", "{459CD557-A40A-4806-828C-EEFC72AF626C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_ClassList", "Lab_ClassList\Lab_ClassList.csproj", "{F6507DB8-76C4-496E-8C55-E8E231A5D9FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,10 @@ Global
 		{459CD557-A40A-4806-828C-EEFC72AF626C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{459CD557-A40A-4806-828C-EEFC72AF626C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{459CD557-A40A-4806-828C-EEFC72AF626C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6507DB8-76C4-496E-8C55-E8E231A5D9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6507DB8-76C4-496E-8C55-E8E231A5D9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6507DB8-76C4-496E-8C55-E8E231A5D9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6507DB8-76C4-496E-8C55-E8E231A5D9FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
