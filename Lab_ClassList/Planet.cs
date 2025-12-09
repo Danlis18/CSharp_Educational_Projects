@@ -8,5 +8,6 @@
         public double Volume { get; set; }
         public double PlanetArea { get; set; }
         public TimeSpan time { get; set; }
+        public double SunDistance { get; set; }
     }
 }

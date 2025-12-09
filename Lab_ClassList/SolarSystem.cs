@@ -18,9 +18,17 @@ namespace Lab_ClassList
 
         public SimplePlanet SearchMaxMass()
         {
-            return planets.Find(x => x.Mass == );
-        }
+            if (planets == null || planets.Count == 0)
+            {
+                return null;
+            }
 
+            double maxMass = planets.Max(p => p.Mass);
+
+            return planets.Find(p => p.Mass == maxMass);
+      
+        }   
+        
         public void print()
         {
             foreach (SimplePlanet planet in planets)
