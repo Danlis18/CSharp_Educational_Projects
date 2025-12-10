@@ -127,3 +127,19 @@ double resDP = operationDelegateMultiply(10, 5);
 OperationDelegate<string> operationDelegateString = AddString;
 string resSP = operationDelegateString("qa", "32");
 */
+
+
+
+//Готові Delegate в .NET
+
+//Action<T>
+//public delegate void Action<in T>(T obj);
+
+//Func<T, TResult>
+//public delegate TResult Func<in T, out TResult>(T arg);
+
+//Predicate<T>
+//public delegate bool Predicate<in T>(T obj);
+
+//Comparison<T>
+//public delegate int Comparison<in T>(T x, T y);
