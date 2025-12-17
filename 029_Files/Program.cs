@@ -1,5 +1,6 @@
 ﻿using _029_Files;
-using System.Text;
+
+using System.Xml.Serialization;
 //Класи роботи з файлами:
 
 // FileStream (вважається низькорівневим)
@@ -84,8 +85,57 @@ foreach (Point p in points)
 
 
 
-
-
 // BinaryReader, BinaryWriter
+//Записування
+/*string path = "data.bin";
+using FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+BinaryWriter binaryWriter = new BinaryWriter(fileStream);
+binaryWriter.Write(312.21);
+binaryWriter.Write("Helik Worldik");
+binaryWriter.Write(true);
+*/
+
+//Зчитування
+/*string path = "data.bin";
+using FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
+using BinaryReader binaryReader = new BinaryReader(fileStream);
+
+double d = binaryReader.ReadDouble();
+string s = binaryReader.ReadString();
+bool b = binaryReader.ReadBoolean();
+
+Console.WriteLine(d);
+Console.WriteLine(s);
+Console.WriteLine(b);
+*/
+
+
 
 // Серіалізація об'єктів(XML, JSON)
+//Серілізація - це збереження стану об'єкта з метою його подальшого відновлення.
+/*List<Point> point = new List<Point>() { 
+    new Point(){X = 0,Y = 0 },
+    new Point(){X = -54,Y = 45 },
+    new Point(){X = 423,Y = 77 },
+};
+
+XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Point>));
+
+string path = "points.xml";
+FileStream fileStream = new FileStream(path, FileMode.Create);
+xmlSerializer.Serialize(fileStream, point);
+*/
+
+//Десеріалізація - це відновлення (зчитування)
+/*string path = "points.xml";
+FileStream fileStream = new FileStream(path, FileMode.Open);
+XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Point>));
+
+List<Point> points = (List<Point>)xmlSerializer.Deserialize(fileStream);
+
+foreach (Point p in points)
+{
+    Console.WriteLine(p);
+}
+*/
+
