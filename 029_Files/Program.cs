@@ -113,18 +113,23 @@ Console.WriteLine(b);
 
 // Серіалізація об'єктів(XML, JSON)
 //Серілізація - це збереження стану об'єкта з метою його подальшого відновлення.
-/*List<Point> point = new List<Point>() { 
+List<Point> point = new List<Point>() {
     new Point(){X = 0,Y = 0 },
     new Point(){X = -54,Y = 45 },
     new Point(){X = 423,Y = 77 },
 };
 
-XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Point>));
+XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Point>),
+    new XmlRootAttribute()
+    {
+        ElementName = "Points",
+    }
+);
 
 string path = "points.xml";
 FileStream fileStream = new FileStream(path, FileMode.Create);
 xmlSerializer.Serialize(fileStream, point);
-*/
+
 
 //Десеріалізація - це відновлення (зчитування)
 /*string path = "points.xml";
