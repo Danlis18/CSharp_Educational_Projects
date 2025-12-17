@@ -1,8 +1,14 @@
-﻿namespace _029_Files
+﻿using System.Xml.Serialization;
+
+namespace _029_Files
 {
+    [XmlRoot("Points")]
     public class Point
     {
+        [XmlAttribute("X")]
         public int X { get; set; }
+
+        [XmlAttribute("Y")]
         public int Y { get; set; }
 
         /*public Point() {
