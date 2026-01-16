@@ -18,9 +18,13 @@
 
         public void DoPong(object sender, CounterEventArgs e)
         {
-            Console.WriteLine($"Ping received Pong: {e.Number}");
+            if (e.Number == 1)
+                Console.WriteLine($"Ping received Pong");
+            else
+                Console.WriteLine($"Ping received Pong");
+            
+            if (e.Number < 5)
+                StartPing(e.Number + 1);
         }
     }
-
-
 }

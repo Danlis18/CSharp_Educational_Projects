@@ -1,7 +1,7 @@
 ﻿using _028_Ping_Pong;
 
-Ping ping = new Ping();
-Pong pong = new Pong();
+var ping = new Ping();
+var pong = new Pong();
 
 ping.Connect(pong);
 pong.Connect(ping);

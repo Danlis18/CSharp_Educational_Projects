@@ -18,7 +18,13 @@ namespace _028_Ping_Pong
         }
         public void DoPing(object sender, CounterEventArgs e)
         {
-            Console.WriteLine($"Pong received Ping: {e.Number}");
+            if (e.Number == 2)
+                Console.WriteLine($"Pong received Ping");
+            else
+                Console.WriteLine($"Pong received Ping");
+
+            if (e.Number < 5)
+                StartPong(e.Number + 1);
         }
     }
 }
