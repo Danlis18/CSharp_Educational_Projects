@@ -129,5 +129,10 @@ namespace _034_WF_Basics
         {
             labelTimer.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void labelCount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
