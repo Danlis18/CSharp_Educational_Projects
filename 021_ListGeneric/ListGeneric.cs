@@ -4,83 +4,113 @@ namespace _021_ListGeneric
 {
     class MyList<T> : IEnumerable
     {
-        private T[] mass;
+        private ListItem<T>? head;
+        private ListItem<T>? tail;
 
-
-        public int Count { get; set; }
-
-
-        public MyList()
-        {
-            mass = new T[10];
-        }
-
-        public MyList(int size = 10)
-        {
-            mass = new T[size];
-        }
+        public int Count { get; private set; }
         public void PushBack(T value)
         {
-            T[] newMass = new T[Count + 1];
+            ListItem<T> item = new ListItem<T>(value);
 
-            for (int i = 0; i < Count; i++)
-                newMass[i] = mass[i];
-
-            newMass[Count] = value;
-            mass = newMass;
+            if (Count == 0)
+            {
+                head = tail = item;
+            }
+            else
+            {
+                tail!.Next = item;
+                tail = item;
+            }
 
             Count++;
         }
-
         public void PopBack()
         {
             if (Count == 0)
+                throw new Exception("List is empty");
+
+            if (Count == 1)
             {
-                throw new Exception("Vector is empty");
+                head = tail = null;
+            }
+            else
+            {
+                ListItem<T> current = head!;
+                while (current.Next != tail)
+                    current = current.Next!;
+
+                current.Next = null;
+                tail = current;
             }
 
             Count--;
         }
-
         public void Insert(int index, T value)
         {
             if (index < 0 || index > Count)
-            {
                 throw new Exception("Index out of range");
-            }
 
-            if (Count == mass.Length)
+            if (index == 0)
             {
-                T[] newMass = new T[Count + 1];
-                for (int i = 0; i < Count; i++)
-                {
-                    newMass[i] = mass[i];
-                }
+                ListItem<T> item = new ListItem<T>(value);
+                item.Next = head;
+                head = item;
 
-                mass = newMass;
+                if (Count == 0)
+                    tail = head;
+
+                Count++;
+                return;
             }
 
-            for (int i = Count; i > index; i--)
+            if (index == Count)
             {
-                mass[i] = mass[i - 1];
+                PushBack(value);
+                return;
             }
 
-            mass[index] = value;
+            ListItem<T> prev = GetItem(index - 1);
+            ListItem<T> newItem = new ListItem<T>(value);
+
+            newItem.Next = prev.Next;
+            prev.Next = newItem;
+
             Count++;
         }
 
         public void Erase(int index)
         {
             if (index < 0 || index >= Count)
-            {
                 throw new Exception("Index out of range");
+
+            if (index == 0)
+            {
+                head = head!.Next;
+                if (Count == 1)
+                    tail = null;
+
+                Count--;
+                return;
             }
 
-            for (int i = index; i < Count - 1; i++)
-            {
-                mass[i] = mass[i + 1];
-            }
+            ListItem<T> prev = GetItem(index - 1);
+            prev.Next = prev.Next!.Next;
+
+            if (index == Count - 1)
+                tail = prev;
+
             Count--;
+        }
+
+        public T At(int index)
+        {
+            return GetItem(index).Value;
+        }
+
+        public T this[int index]
+        {
+            get => At(index);
+            set => GetItem(index).Value = value;
         }
 
         public bool isEmpty()
@@ -88,61 +118,65 @@ namespace _021_ListGeneric
             return Count == 0;
         }
 
-        public T At(int index)
+        public void Clear()
         {
-            if (index >= 0 && index < Count)
-            {
-                return mass[index];
-            }
-            throw new Exception("Index out of range");
+            head = tail = null;
+            Count = 0;
         }
 
         public void Reverse()
         {
-            for (int i = 0; i < Count / 2; i++)
+            ListItem<T>? prev = null;
+            ListItem<T>? current = head;
+            tail = head;
+
+            while (current != null)
             {
-                T temp = mass[i];
-                mass[i] = mass[Count - i - 1];
-                mass[Count - i - 1] = temp;
+                ListItem<T>? next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
             }
+
+            head = prev;
         }
 
-        public void Clear()
+        private ListItem<T> GetItem(int index)
         {
-            Count = 0;
+            if (index < 0 || index >= Count)
+                throw new Exception("Index out of range");
+
+            ListItem<T> current = head!;
+            for (int i = 0; i < index; i++)
+                current = current.Next!;
+
+            return current;
         }
 
         public override string ToString()
         {
             if (Count == 0)
-                return "List is Empty";
+                return "List is empty";
 
-            string result = "List array: ";
-            for (int i = 0; i < Count; i++)
+            string result = "List: ";
+            ListItem<T>? current = head;
+
+            while (current != null)
             {
-                result += mass[i] + ", ";
+                result += current.Value + ", ";
+                current = current.Next;
             }
+
             return result;
         }
 
         public IEnumerator GetEnumerator()
         {
-            return new UserCollectionEnumerator<T>(this);
-        }
-
-        public T this[int index]
-        {
-            get
+            ListItem<T>? current = head;
+            while (current != null)
             {
-                return At(index);
-            }
-            set
-            {
-                if (index < 0 || index >= Count)
-                {
-                    throw new Exception("Index out of range");
-                }
-                mass[index] = value;
+                yield return current.Value;
+                current = current.Next;
             }
         }
     }

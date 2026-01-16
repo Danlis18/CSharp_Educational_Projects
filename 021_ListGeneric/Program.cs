@@ -1,6 +1,6 @@
 ﻿using _021_ListGeneric;
 
-MyList<int> vector = new MyList<int>();
+MyList<int> list = new MyList<int>();
 
 while (true)
 {
@@ -13,7 +13,7 @@ while (true)
     Console.WriteLine("6 - Reverse list (Reverse)");
     Console.WriteLine("7 - Clear list (Clear)");
     Console.WriteLine("8 - Check if list is empty (Empty)");
-    Console.WriteLine("9 - Print list (ToString)");
+    Console.WriteLine("9 - Print list (foreach)");
     Console.WriteLine("10 - Change element using indexer []");
     Console.WriteLine("0 - Exit");
     Console.Write("Your choice: ");
@@ -28,12 +28,13 @@ while (true)
             case 1:
                 Console.Write("Enter value to add: ");
                 int value = Convert.ToInt32(Console.ReadLine());
-                vector.PushBack(value);
+                list.PushBack(value);
                 Console.WriteLine("Element added.");
                 break;
 
             case 2:
-                vector.PopBack();
+                list.PopBack();
+                Console.WriteLine("Last element removed.");
                 break;
 
             case 3:
@@ -41,50 +42,45 @@ while (true)
                 int idxInsert = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Enter value: ");
                 int valInsert = Convert.ToInt32(Console.ReadLine());
-                vector.Insert(idxInsert, valInsert);
+                list.Insert(idxInsert, valInsert);
                 Console.WriteLine("Element inserted.");
                 break;
 
             case 4:
                 Console.Write("Enter index for deletion: ");
                 int idxErase = Convert.ToInt32(Console.ReadLine());
-                vector.Erase(idxErase);
+                list.Erase(idxErase);
                 Console.WriteLine("Element erased.");
                 break;
 
             case 5:
                 Console.Write("Enter index: ");
                 int idxAt = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine($"Element[{idxAt}] = {vector.At(idxAt)}");
+                Console.WriteLine($"Element[{idxAt}] = {list.At(idxAt)}");
                 break;
 
             case 6:
-                vector.Reverse();
+                list.Reverse();
                 Console.WriteLine("List reversed.");
                 break;
 
             case 7:
-                vector.Clear();
+                list.Clear();
                 Console.WriteLine("List cleared.");
                 break;
 
             case 8:
-                Console.WriteLine(vector.isEmpty());
-                if (vector.isEmpty())
-                {
+                if (list.isEmpty())
                     Console.WriteLine("List is empty.");
-                }
                 else
-                {
-                    Console.WriteLine($"List is NOT empty. Count = {vector.Count}");
-                }
+                    Console.WriteLine($"List is NOT empty. Count = {list.Count}");
                 break;
 
             case 9:
-                foreach (var item in vector)
-                {
-                    Console.WriteLine($"List: {item}, ");
-                }
+                Console.Write("List: ");
+                foreach (var item in list)
+                    Console.Write(item + " ");
+                Console.WriteLine();
                 break;
 
             case 10:
@@ -92,7 +88,7 @@ while (true)
                 int idxSet = Convert.ToInt32(Console.ReadLine());
                 Console.Write("New value: ");
                 int valSet = Convert.ToInt32(Console.ReadLine());
-                vector[idxSet] = valSet;
+                list[idxSet] = valSet;
                 Console.WriteLine("Element changed using indexer.");
                 break;
 
