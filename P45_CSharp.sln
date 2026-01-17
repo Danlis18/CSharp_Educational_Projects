@@ -79,7 +79,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "030_Directiories", "030_Dir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_PersonalClassLib", "031_PersonalClassLib\031_PersonalClassLib.csproj", "{B6E259E2-C6AB-433A-A6A1-A1D573F44071}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_DLL-Test", "031_DLL-Test\031_DLL-Test.csproj", "{CB5BF385-E54B-4494-96FD-278AD0F6B77F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_SerializConsolApp", "031_DLL-Test\031_SerializConsolApp.csproj", "{CB5BF385-E54B-4494-96FD-278AD0F6B77F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "032_JsonSerialize", "032_JsonSerialize\032_JsonSerialize.csproj", "{978F4487-DFF4-4569-BC3D-CE03D1B0A5C5}"
 EndProject
