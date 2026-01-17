@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>_031_DLL_Test</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="031_PersonalClassLib">
+      <HintPath>..\031_PersonalClassLib\bin\Debug\net9.0\031_PersonalClassLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
