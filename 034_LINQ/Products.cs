@@ -1,4 +1,4 @@
-﻿namespace _034_LINQ
+﻿namespace _034_LINQ2
 {
     class Product
     {
@@ -11,5 +11,4 @@
             return $"{Name}, {Price}, {Manufacturer}, {Count}";
         }
     }
-
 }

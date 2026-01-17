@@ -10,7 +10,5 @@
         {
             return $"{Name}, {Age}, {City}";
         }
-
     }
-
 }

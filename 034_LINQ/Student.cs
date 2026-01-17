@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _035_LINQ_PRACTICE2
+﻿namespace _034_LINQ2
 {
     class Student
     {
@@ -13,10 +7,13 @@ namespace _035_LINQ_PRACTICE2
         public int Age { get; set; }
         public List<string> Languages { get; set; }
         public int GroupId { get; set; }
+
         public Student()
         {
             Languages = new List<string>();
         }
+
+        // Додаємо цей метод:
         public override string ToString()
         {
             // Перетворюємо список мов у рядок через кому
@@ -25,5 +22,4 @@ namespace _035_LINQ_PRACTICE2
             return $"{FirstName} {LastName} (Вік: {Age}, Група: {GroupId}, Мови: {langs})";
         }
     }
-
 }
