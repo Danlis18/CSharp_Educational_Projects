@@ -26,24 +26,25 @@ Console.WriteLine(text);*/
 
 
 // StreamReader, StreamWriter
-/*string path = "data.txt";*/
+string path = "data.txt";
 
 //Записування
-/*using StreamWriter writer = new StreamWriter(path);
-writer.WriteLine($"Hello DANYLO, year: {path.Length}"); ; //будь-що записуємо */
+using StreamWriter writer = new StreamWriter(path);
+writer.WriteLine($"Hello DANYLO, year: {path.Length}"); ; //будь-що записуємо 
 
 //Зчитування
-/*using StreamReader reader = new StreamReader(path);
+using StreamReader reader = new StreamReader(path);
 string text = reader.ReadToEnd(); //зчитається весь текст
-string text = reader.ReadLine(); //зчитує один рядок
+//string text = reader.ReadLine(); //зчитує один рядок
 Console.WriteLine(text);
 
 //Зчитування до поки не буде пустий
 string line = null;
-while((line = reader.ReadLine()) != null){
+while ((line = reader.ReadLine()) != null)
+{
     Console.WriteLine(line);
 }
-*/
+
 
 //З класу запитусуємо у файл:
 /*Point point = new Point() {X = 4, Y = 5 };
@@ -113,7 +114,7 @@ Console.WriteLine(b);
 
 // Серіалізація об'єктів(XML, JSON)
 //Серілізація - це збереження стану об'єкта з метою його подальшого відновлення.
-List<Point> point = new List<Point>() {
+/*List<Point> point = new List<Point>() {
     new Point(){X = 0,Y = 0 },
     new Point(){X = -54,Y = 45 },
     new Point(){X = 423,Y = 77 },
@@ -128,7 +129,7 @@ XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Point>),
 
 string path = "points.xml";
 FileStream fileStream = new FileStream(path, FileMode.Create);
-xmlSerializer.Serialize(fileStream, point);
+xmlSerializer.Serialize(fileStream, point);*/
 
 
 //Десеріалізація - це відновлення (зчитування)
