@@ -14,17 +14,24 @@ namespace Vocabluary
 
         public List<Word> Words { get; set; } = new List<Word>();
 
-        public string Type => $"{FromLanguage}-{ToLanguage}";
+        public string TypeOfVocabularyDictionary
+        {
+            get
+            {
+                string result = FromLanguage + "-" + ToLanguage;
+                return result;
+            }
+        }
 
         public override string ToString()
         {
-            return $"Dictionary: {Name} | Type: {Type} | Words count: {Words.Count}";
+            return $"Dictionary: {Name} | Vocabulary type: {TypeOfVocabularyDictionary} | Words count: {Words.Count}";
         }
 
         public Word? FindWord(string word)
             => Words.FirstOrDefault(w => w.Name.Equals(word, StringComparison.OrdinalIgnoreCase));
 
-        public void AddOrMergeWord(string word, IEnumerable<string> translations)
+        public void AddWord(string word, IEnumerable<string> translations)
         {
             var w = FindWord(word);
             if (w == null)
@@ -34,39 +41,48 @@ namespace Vocabluary
                     Name = word,
                     Translations = translations
                         .Where(t => !string.IsNullOrWhiteSpace(t))
-                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                        .Distinct(StringComparer.OrdinalIgnoreCase) //повтори не додає
                         .ToList()
                 });
                 return;
             }
 
-            var merged = w.Translations
+            var ifExist = w.Translations
                 .Concat(translations)
                 .Where(t => !string.IsNullOrWhiteSpace(t))
                 .Distinct(StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
-            w.Translations = merged;
+            w.Translations = ifExist;
         }
 
         public bool DeleteWord(string word)
         {
             var w = FindWord(word);
-            if (w == null) return false;
+
+            if (w == null)
+            {
+                return false;
+            }
+
             return Words.Remove(w);
         }
 
         public bool DeleteTranslation(string word, string translation)
         {
             var w = FindWord(word);
-            if (w == null) return false;
+            if (w == null)
+            {
+                return false;
+            }
 
             var removed = w.Translations.RemoveAll(t =>
                 t.Equals(translation, StringComparison.OrdinalIgnoreCase)) > 0;
 
-            // якщо перекладів не лишилось — видаляємо слово повністю
             if (w.Translations.Count == 0)
+            {
                 Words.Remove(w);
+            }
 
             return removed;
         }

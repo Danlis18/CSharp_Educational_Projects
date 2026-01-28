@@ -2,17 +2,24 @@
 
 namespace Vocabluary
 {
-
     public class DictionaryJsonDeserializer
     {
-        public List<VocabularyDictionary> LoadFromFile(string path)
+        public List<VocabularyDictionary> TakeFromFile(string path)
         {
-            if (!File.Exists(path)) return new List<VocabularyDictionary>();
+            if (!File.Exists(path))
+            {
+                return new List<VocabularyDictionary>();
+            }
 
             var json = File.ReadAllText(path);
-            var data = JsonSerializer.Deserialize<List<VocabularyDictionary>>(json);
+            var list = JsonSerializer.Deserialize<List<VocabularyDictionary>>(json);
 
-            return data ?? new List<VocabularyDictionary>();
+            if (list == null)
+            {
+                list = new List<VocabularyDictionary>();
+            }
+
+            return list;
         }
     }
 }

@@ -6,14 +6,14 @@ namespace Vocabluary
 
     public class DictionaryJsonSerializer
     {
-        private readonly JsonSerializerOptions _options = new()
+        private readonly JsonSerializerOptions options = new()
         {
             WriteIndented = true,
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
+        }; //для перевірки що записується в Json
 
         public string Serialize(List<VocabularyDictionary> dictionaries)
-            => JsonSerializer.Serialize(dictionaries, _options);
+            => JsonSerializer.Serialize(dictionaries, options);
 
         public void SaveToFile(string path, List<VocabularyDictionary> dictionaries)
         {

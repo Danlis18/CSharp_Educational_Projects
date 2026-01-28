@@ -5,21 +5,56 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocabluary
-{    public class DictionariesCollection
+{
+    public class Collection
     {
-        public List<VocabularyDictionary> Items { get; set; } = new();
+        public List<VocabularyDictionary> GroupOfWords { get; set; }
 
-        public VocabularyDictionary? GetByIndex(int index)
-            => (index >= 0 && index < Items.Count) ? Items[index] : null;
+        public Collection()
+        {
+            GroupOfWords = new List<VocabularyDictionary>();
+        }
+
+        public VocabularyDictionary GetByIndex(int index)
+        {
+            VocabularyDictionary dictionary = GroupOfWords[index];
+            return dictionary;
+        }
 
         public IEnumerable<VocabularyDictionary> SortByName()
-            => Items.OrderBy(d => d.Name);
+        {
+            IEnumerable<VocabularyDictionary> result;
+
+            result = GroupOfWords.OrderBy(d =>
+            {
+                return d.Name;
+            });
+
+            return result;
+        }
 
         public IEnumerable<VocabularyDictionary> SortByType()
-            => Items.OrderBy(d => d.Type).ThenBy(d => d.Name);
+        {
+            IEnumerable<VocabularyDictionary> result;
+            result = GroupOfWords.OrderBy(d =>
+            {
+                return d.TypeOfVocabularyDictionary;
+            })
+            .ThenBy(d =>
+            {
+                return d.Name;
+            });
+            return result;
+        }
 
         public IEnumerable<VocabularyDictionary> SortByWordsCountDesc()
-            => Items.OrderByDescending(d => d.Words.Count).ThenBy(d => d.Name);
+        {
+            IEnumerable<VocabularyDictionary> result;
+            result = GroupOfWords.OrderByDescending(d =>
+            {
+                return d.Words.Count;
+            });
+            return result;
+        }
     }
-
 }
