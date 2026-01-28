@@ -7,8 +7,8 @@
 
         public SearchHistory(string path, int maxCount = 10)
         {
-            path = path;
-            maxCount = Math.Max(1, maxCount);
+            this.path = path;
+            this.maxCount = Math.Max(1, maxCount);
         }
 
         public void Add(string query)

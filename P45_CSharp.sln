@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_Basics", "001_Basics\001_Basics.csproj", "{07D06E19-DB6E-423A-860E-3F78D2ED3854}"
 EndProject
@@ -102,10 +102,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_DeserializConsolApp", "031_DeserializConsolApp\031_DeserializConsolApp.csproj", "{82D66FDB-B71B-F8A3-555E-881B2262DB61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exam", "Exam", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deserialize", "Deserialize\Deserialize.csproj", "{83DE6521-A1CB-44AB-BE3E-54E52735C36F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialize", "Serialize\Serialize.csproj", "{ADC83334-554F-4DAB-9121-2E0F8881AC01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabluary", "Vocabluary\Vocabluary.csproj", "{87054F76-6706-4883-9FD8-4DC6FB902327}"
 EndProject
@@ -509,22 +505,6 @@ Global
 		{82D66FDB-B71B-F8A3-555E-881B2262DB61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82D66FDB-B71B-F8A3-555E-881B2262DB61}.Release|x64.ActiveCfg = Release|Any CPU
 		{82D66FDB-B71B-F8A3-555E-881B2262DB61}.Release|x64.Build.0 = Release|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Debug|x64.Build.0 = Debug|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Release|x64.ActiveCfg = Release|Any CPU
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F}.Release|x64.Build.0 = Release|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Debug|x64.Build.0 = Debug|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Release|x64.ActiveCfg = Release|Any CPU
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01}.Release|x64.Build.0 = Release|Any CPU
 		{87054F76-6706-4883-9FD8-4DC6FB902327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87054F76-6706-4883-9FD8-4DC6FB902327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87054F76-6706-4883-9FD8-4DC6FB902327}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -538,8 +518,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{83DE6521-A1CB-44AB-BE3E-54E52735C36F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{ADC83334-554F-4DAB-9121-2E0F8881AC01} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{87054F76-6706-4883-9FD8-4DC6FB902327} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

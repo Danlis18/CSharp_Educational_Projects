@@ -55,89 +55,67 @@ while (true)
     Console.WriteLine("--- MAIN MENU ---");
     Console.WriteLine("1 - Показати всі словники");
     Console.WriteLine("2 - Створити словник");
-    Console.WriteLine("3 - Обрати словник (підменю)");
+    Console.WriteLine("3 - Обрати словник");
     Console.WriteLine("4 - Сортування словників");
     Console.WriteLine("5 - Показати останні шукані слова");
     Console.WriteLine("0 - Exit");
     Console.Write("Your choice: ");
 
-    string input = Console.ReadLine();
-
-    int choice;
-    if (!int.TryParse(input, out choice))
+    int input;
+    if (!int.TryParse(Console.ReadLine(), out input))
     {
         ShowMessageAndClear("Некоректний ввід.", 1200);
         continue;
     }
 
-    while (true)
+    try
     {
-        Console.Clear();
-
-        Console.WriteLine("--- MAIN MENU ---");
-        Console.WriteLine("1 - Показати всі словники");
-        Console.WriteLine("2 - Створити словник");
-        Console.WriteLine("3 - Обрати словник (підменю)");
-        Console.WriteLine("4 - Сортування словників");
-        Console.WriteLine("5 - Показати останні шукані слова");
-        Console.WriteLine("0 - Exit");
-        Console.Write("Your choice: ");
-
-        input = Console.ReadLine();
-        if (!int.TryParse(input, out choice))
+        switch (input)
         {
-            ShowMessageAndClear("Некоректний ввід.", 1200);
-            continue;
-        }
+            case 1:
+                Console.Clear();
+                ShowDictionaries(collection);
+                Pause();
+                break;
 
-        try
-        {
-            switch (choice)
-            {
-                case 1:
-                    Console.Clear();
-                    ShowDictionaries(collection);
-                    Pause();
-                    break;
+            case 2:
+                Console.Clear();
+                CreateDictionary(collection);
+                serializer.SaveToFile(collectionPath, collection.GroupOfWords);
+                ShowMessageAndClear("Словник створено і збережено.", 1200);
+                break;
 
-                case 2:
-                    Console.Clear();
-                    CreateDictionary(collection);
-                    serializer.SaveToFile(collectionPath, collection.GroupOfWords);
-                    ShowMessageAndClear("Словник створено і збережено.", 1200);
-                    break;
+            case 3:
+                DictionaryAnotherMenu(collection, serializer, collectionPath, history);
+                break;
 
-                case 3:
-                    DictionaryAnotherMenu(collection, serializer, collectionPath, history);
-                    break;
+            case 4:
+                Console.Clear();
+                SortMenu(collection);
+                Pause();
+                break;
 
-                case 4:
-                    Console.Clear();
-                    SortMenu(collection);
-                    Pause();
-                    break;
+            case 5:
+                Console.Clear();
+                ShowHistory(history);
+                Pause();
+                break;
 
-                case 5:
-                    Console.Clear();
-                    ShowHistory(history);
-                    Pause();
-                    break;
+            case 0:
+                return;
 
-                case 0:
-                    return;
-
-                default:
-                    ShowMessageAndClear("Невірний пункт меню.", 1200);
-                    break;
-            }
-        }
-        catch (Exception ex)
-        {
-            ShowMessageAndClear("Помилка: " + ex.Message, 1500);
+            default:
+                ShowMessageAndClear("Невірний пункт меню.", 1200);
+                break;
         }
     }
+    catch (Exception ex)
+    {
+        ShowMessageAndClear("Помилка: " + ex.Message, 1500);
+    }
+}
 
-    static void ShowDictionaries(Collection collection)
+static void ShowDictionaries(Collection collection)
     {
         if (collection.GroupOfWords.Count == 0)
         {
@@ -261,7 +239,7 @@ while (true)
 
                     case 2:
                         Console.Clear();
-                        Console.WriteLine(dict.ToString());
+                        dict.PrintAllWords();
                         Pause();
                         break;
 
@@ -518,7 +496,7 @@ while (true)
         }
     }
 
-    static void ShowMessageAndClear(string message, int milliseconds)
+static void ShowMessageAndClear(string message, int milliseconds)
     {
         Console.WriteLine();
         Console.WriteLine(message);
@@ -532,7 +510,6 @@ while (true)
         Console.WriteLine("Натисни будь-яку клавішу щоб продовжити...");
         Console.ReadKey(true);
     }
-}
 
 
 
